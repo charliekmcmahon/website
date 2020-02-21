@@ -1,15 +1,84 @@
+/* CSS Copyright © 2020, Charlie McMahon */
+
+*{
+  text-decoration: none;
+}
 body {
   margin: 0;
   text-align: center;
   font-family: 'Shadows Into Light', cursive;
   color: #001011;
+  background: linear-gradient(0deg, red, orange, yellow, lime, green,aqua, blue, violet, purple, magenta);
+  background-size: 600% 600%;
+  -webkit-animation: bgGradient 60s ease infinite;
+  -moz-animation: bgGradient 60s ease infinite;
+  animation: bgGradient 60s ease infinite;
 }
 
+/* Control the gradient */
+@-webkit-keyframes bgGradient {
+    0%{background-position:26% 0%}
+    50%{background-position:75% 100%}
+    100%{background-position:26% 0%}
+}
+@-moz-keyframes bgGradient {
+    0%{background-position:26% 0%}
+    50%{background-position:75% 100%}
+    100%{background-position:26% 0%}
+}
+@keyframes bgGradient {
+    0%{background-position:26% 0%}
+    50%{background-position:75% 100%}
+    100%{background-position:26% 0%}
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: "Courier";
+    font-size: 30px;
+    color: black;
+}
+
+.navbar a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+
+.website-button a:hover {
+    background-color: #afafaf !important;
+
+}
+
+.nav_icon {
+
+  width: 50px;
+  height: 50px;
+  padding-top: 10px;
+  padding-left: 220px;
+
+}
+
+.name {
+
+  padding-right: 400px !important;
+
+}
+
+/* Large Text */
 h1 {
   font-size: 80px;
   color: #001011;
 }
 
+/* Smaller text */
 p {
 
   font-family: Courier;
@@ -17,37 +86,21 @@ p {
 }
 
 .top-container {
-background-color: #97C8EB;
 position: relative;
 padding-top: 100px;
 
 }
-/*
-.middle-container {
-background-color: red;
-height: 200px;
-width: 200px;
-}
 
-.bottom-container {
-background-color: blue;
-height: 200px;
-width: 200px;
-}
-*/
 .top-cloud {
 position: absolute;
 right: 300px;
 top: 50px;
-
-
 }
 
 .bottom-cloud {
 position: absolute;
 left: 300px;
 bottom: 300px;
-
 }
 
 .no-margin, no-margin2 {
