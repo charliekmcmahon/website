@@ -119,9 +119,10 @@ body {
     overflow: hidden;
     background-color: white;
     position: fixed;
+    z-index: 999;
     top: 0;
     width: 100%;
-    font-family: "Courier";
+    font-family: 'Lato';
     font-size: 30px;
     color: black;
 }
@@ -144,6 +145,7 @@ body {
 .name {
 
   padding-right: 370px !important;
+  font-family: 'Courier' !important;
 
 }
 
@@ -193,4 +195,120 @@ bottom: 300px;
     width: 50%;
     margin: auto;
 
+}
+
+.heading {
+  font-size: 3rem;
+  font-family: 'Shadows Into Light', cursive;
+}
+.text {
+  font-size: 1rem;
+  font-family: 'Lato';
+  padding-bottom: 20px;
+}
+.list-text {
+  font-size: 1rem;
+  font-family: 'Lato';
+}
+.subheading {
+
+  font-size: 2rem;
+  font-family: 'Lato';
+
+}
+.middle-container{
+
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(220,255,204,1) 100%);
+
+}
+
+.bottom-container{
+
+  background-color: #9fdfcd;
+
+}
+.btn {
+	box-shadow: 3px 4px 0px 0px #9fdfcd;
+	background:linear-gradient(to bottom, #9fdfcd 5%, #9fdfcd 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+  margin-bottom: 150px;
+}
+.btn:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+.heading{
+
+  margin-top: 100px;
+
+}
+.footer-link{
+
+  font-size: 1.23rem;
+  font-weight: bold;
+  font-family: 'Lato';
+  padding-bottom: 20px;
+  color: #4f3961;
+
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  margin: 2.4rem auto;
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+/* -- Animated hr -- */
+
+.progress {
+  background: rgba(1, 15, 30, 0.1);
+  height: 1px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress::before {
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-name: progress;
+  background: #111;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  width: 80px;
+}
+
+@keyframes progress {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(1440px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
 </head>
 
@@ -17,7 +18,7 @@
         <img class="nav_icon" src="./images/profile.png" alt="icon">
         <a class="website-button" href="http://charliekmcmahon.com.au" target="_blank">Website</a>
         <a class="website-button" href="https://github.com/charliekmcmahon" target="_blank">Github</a>
-        <a class="website-button" href="https://facebook.com/charliekmcmahon" target="_blank">About Me</a>
+        <a class="website-button" href="#contact">Contact</a>
         <a class= "name" href="index.html">charliekmcmahon</a>
     </div>
     <img class="top-cloud" src="cloud.png" alt="cloud-img">
@@ -43,45 +44,140 @@
 <div class="middle-container">
   <div class="profile">
     <img src="images/profile.png" alt="Me">
-    <h2>Hello.</h2>
-    <p>My name is Charlie McMahon. I'm a student, and I live in the Sunshine Coast, QLD, Australia.</p>
+    <h2 class="heading">Hello.</h2>
+    <p class="text">My name is Charlie McMahon. I'm a student, and I live in the Sunshine Coast, QLD, Australia.</p>
   </div>
-  <hr>
+  <hr class="progress">
   <div class="skills">
-    <h2>My Skills.</h2>
+    <h2 class="heading">My Skills.</h2>
     <div class="skill-row">
       <img class="" src="" alt="">
-      <h3>Coding</h3>
-      <p>I can code in Python, CSS, HTML, JavaScript, C#, Swift, AppleScript, Objective-C, Arduino and PhP. </p>
+      <h3 class="subheading">Coding</h3>
+      <p class="text">I can code in Python, CSS, HTML, JavaScript, C#, Swift, AppleScript, Objective-C, Arduino and PhP. </p>
+
+      <style>
+#draggable {
+  position: absolute;
+  left: 175px;
+  right: auto;
+  z-index: 19;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#draggable img {
+
+  width: 100px;
+  height: 100px;
+
+}
+
+#draggable {
+  padding: 10px;
+  cursor: grab;
+  z-index: 10;
+  color: #fff;
+  margin: auto;
+}
+
+</style>
+<div id="draggable">
+  <img src="images/python.png" alt>
+  <img src="images/css.png" alt>
+  <img src="images/html.png" alt>
+  <img src="images/js.png" alt>
+  <img src="images/csharp.png" alt>
+  <img src="images/swift.png" alt>
+  <img src="images/applescript.png" alt>
+  <img src="images/objc.png" alt>
+  <img src="images/arduino.png" alt>
+  <img src="images/php.svg" alt>
+</div>
+
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("draggable"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+
+
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="skill-row">
       <img class="" src="" alt="">
-      <h3>Business Manager</h3>
-      <p>I have managed the online presence for the following businesses:
-      <li><a href="https://maccastech.com.au">Macca's Tech</a></li>
-      <li><a href="https://scsolar.com.au">Sunshine Coast Solar Solutions</a></li>
-      <li><a href="https://skilledelectrial.com.au">Skilled Electrical Services</a></li>
-      <li><a href="https://amadil.com.au">Noosa Computers (Amadil.com.au)</a></li>
-      <li><a href="https://fraser-accommodation.com.au/">Fraser Island Beach Cottage</a></li>
-      <li><a href="https://fraserislandhideaway.com.au">Fraser Island Hideaway</a></li>
-      <li><a href="https://buderimdenturestudio.com.au">Buderim Denture Studio</a></li>
+      <h3 class="subheading">Business Manager</h3>
+      <p class="list-text">I have managed the online presence for the following businesses:
+      <li><a class="text" href="https://maccastech.com.au">Macca's Tech</a></li>
+      <li><a class="text" href="https://scsolar.com.au">Sunshine Coast Solar Solutions</a></li>
+      <li><a class="text" href="https://skilledelectrial.com.au">Skilled Electrical Services</a></li>
+      <li><a class="text" href="https://amadil.com.au">Noosa Computers (Amadil.com.au)</a></li>
+      <li><a class="text" href="https://fraser-accommodation.com.au/">Fraser Island Beach Cottage</a></li>
+      <li><a class="text" href="https://fraserislandhideaway.com.au">Fraser Island Hideaway</a></li>
+      <li><a class="text" href="https://buderimdenturestudio.com.au">Buderim Denture Studio</a></li>
       </p>
     </div>
   </div>
-  <hr>
-  <div class="contact-me">
-    <h2>Get In Touch</h2>
-    <h3>Send me an email through the carrier birds to get in touch!</h3>
+  <hr class="progress">
+  <div class="contact-me" id="contact">
+    <h2 class="heading">Get In Touch</h2>
+    <h3 class="text">Send me an email to get in touch!</h3>
     <a class="btn" href="mailto:charlie@maccastech.com.au">CONTACT ME</a>
   </div>
 </div>
 
 
 <div class="bottom-container">
+  <br>
   <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
   <a class="footer-link" href="https://twitter.com/charliemacca12">Twitter</a>
   <a class="footer-link" href="https://www.maccastech.com.au">Website</a>
   <p>© 2020 Charlie McMahon. All rights reserved.</p>
+  <p> Made with ❤️ in clean html & css </p>
+  <br>
 </div>
 
 </body>
